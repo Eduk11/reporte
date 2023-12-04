@@ -1,0 +1,374 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del encabezado (header) */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo del logo */
+.logo {
+    max-width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+}
+
+/* Estilo del contenedor principal */
+.container {
+    width: 80%;
+    margin: 0px auto; /* Añadido un margen superior e inferior */
+    background-color: #fff; /* Color de fondo del contenedor principal */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+    overflow: hidden;
+    padding: 20px; /* Añadido espacio interno */
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 2px solid #ddd; */
+}
+
+/* Contenedores hijos dentro del contenedor principal */
+.main-section,
+.second-section {
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    /* border: 2px solid #ddd; */
+    /* Centrar los elementos horizontal y verticalmente */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Nuevo contenedor para la tabla */
+.table-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+/* Estilos para la sección de bienvenida y fecha */
+.titulo {
+    font-size: 36px;
+    text-align: center;
+    color: #3498db;
+    position: relative;
+    margin: 10px;
+
+    animation: fadeIn 1s ease-in-out 0.5s forwards; /* Animación de fade-in con retraso */
+}
+
+.fecha {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    position: relative;
+    margin: 10px;
+    animation: fadeIn 1s ease-in-out 0.5s forwards; /* Animación de fade-in con retraso */
+}
+
+.inicio_text:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #3498db;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.inicio_text:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #3498db;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.inicio_text:hover:before,
+.inicio_text:hover:after {
+    transform: scaleX(1);
+}
+
+/* Definición de la animación fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; 
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; 
+    text-align: left;
+}
+
+th {
+    background-color: #3498db; 
+    color: #fff; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ecf0f1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Otros estilos existentes ... */
+/* Estilo para los elementos en main-section */
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para el input y selects */
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #3498db;
+}
+
+/* Estilo para los selects */
+.input-container select {
+    appearance: none;
+    padding-right: 30px; /* Espacio para la flecha en el select */
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.input-container select:after {
+    content: '\25BC'; /* Código ASCII para la flecha hacia abajo */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+/* Estilos para el nuevo contenido en second-section */
+.additional-content {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilos para el select de calendario */
+.select_date{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Estilos para el switch */
+.switch {
+    /* position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px; */
+    
+    background-color: #ccc;
+    border-radius: 34px;
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin: auto; /* Agregado para centrar horizontalmente */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Estilos adicionales para mejorar la apariencia del switch */
+.switch {
+    background-color: #ccc;
+    border-radius: 34px;
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    height: 26px;
+    margin-left: 4px;
+    margin-top: 4px;
+    position: absolute;
+    transition: all 0.3s;
+    width: 26px;
+}
+
+
+
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .main-section,
+    .second-section {
+        width: 100%;
+        margin: 0; /* Ajuste para ocupar todo el ancho sin márgenes laterales */
+        padding: 0; /* Elimina cualquier padding que pueda afectar la centralización */
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-top: 10px;
+    }
+
+    header h1 {
+        margin: 10px 0;
+    }
+    .lbl{
+        padding-top: 20px;
+    }
+}
+
+/* Estilos para los botones */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos en la misma línea */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.button {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #3498db; /* Cambia el color de fondo al pasar el ratón */
+    color: #fff; /* Cambia el color del texto al pasar el ratón */
+}

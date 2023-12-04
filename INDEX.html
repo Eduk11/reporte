@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web</title>
+    <link rel="stylesheet" href="STYLE.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+
+</head>
+<body>
+
+    <!-- Encabezado (Header) -->
+    <header>
+        <h1>ASOCICIÓN BANCK MONEY :V</h1>
+        <img src="/img/banca.png" alt="Logo" class="logo">
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <p class="inicio_text titulo">¡Bienvenid@ al Sistema!</p>
+        <p id="fecha" class="fecha"></p>
+        <!-- Contenedores hijos dentro del contenedor principal -->
+        <div class="main-container">
+            <section class="main-section">
+                <!-- Input y Selects Modernos -->
+                <div class="input-container">                    
+                    <label for="TipoConsulta" class="lbl" id="lbl_TipoCon">Seleccione Tipo de Consulta:</label>
+                    <select id="select_TipoCon" onchange="controlarVisibilidad()">
+                        <option value="1">opcion 1</option>
+                        <option value="2">Opción 2</option>
+                        <option value="3">Opción 3</option>
+                    </select>
+                    <label for="Teti" class="" id="lbl_Teti">Ingrese Teti:</label>
+                    <input type="text" placeholder="Ingresa Teti" id="text_Teti">
+                    <label for="SucAge" class="" id="lbl_SucAge">Seleccione Sucursal Agencia:</label>
+                    <select id="select_SucAge">
+                        <option>Opción A</option>
+                        <option>Opción B</option>
+                        <option>Opción C</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="second-section">
+                <!-- Nuevo contenido con select para calendario y switch -->
+                <div class="additional-content">
+                    <!-- Input de tipo date para seleccionar fechas -->
+                    <label for="fechaOtroContenido" class="lbl">Seleccione una fecha para consultar:</label>
+                    <input class="select_date" type="date" id="select_date" name="">
+
+                    <label for="switch" class="">Reporte: Detallado/General:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="Report_Detalle" onchange="controlarVisibilidadSwitch()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <button class="button">Botón</button>                
+            </section>
+        </div>
+
+        <!-- Nuevo contenedor para la tabla -->
+        <div class="table-container">
+            <div class="button-container">
+                <h2>Tabla Responsiva</h2>
+                <!-- Contenedor para los botones -->
+                <div>
+                    <button class="button" onclick="exportToWord()">Word 1</button>
+                    <button class="button" onclick="Export2Excel('report_data', 'reporte');">Excel 2</button>
+                    <button class="button" onclick="exportarPDF()">Pdf 3</button>
+                </div>
+            </div>
+            <table border="1" id="report_data">
+                <thead>
+                    <tr>
+                        <th class="columna1">Encabezado 1</th>
+                        <th class="columna2">Encabezado 2</th>
+                        <th class="columna3">Encabezado 3</th>
+                        <th class="columna4">Encabezado 4</th>
+                        <th class="columna5">Encabezado 5</th>
+                        <th class="columna6">Encabezado 6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="columna1">Dato 1</td>
+                        <td class="columna2">Dato 2</td>
+                        <td class="columna3">Dato 3</td>
+                        <td class="columna4">Dato 4</td>
+                        <td class="columna5">Dato 5</td>
+                        <td class="columna6">Dato 6</td>
+                    </tr>
+                    <tr>
+                        <td class="columna1">Dato 1</td>
+                        <td class="columna2">Dato 2</td>
+                        <td class="columna3">Dato 3</td>
+                        <td class="columna4">Dato 4</td>
+                        <td class="columna5">Dato 5</td>
+                        <td class="columna6">Dato 6</td>
+                    </tr>                    
+                    <!-- Agrega más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="MAIN.js"></script>
+
+</body>
+</html>
